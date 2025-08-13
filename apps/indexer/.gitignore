@@ -1,2 +1,2 @@
-*.csv
-*.json
+dev
+.db
