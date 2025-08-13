@@ -1,0 +1,49 @@
+[package]
+description = "Stylus decompressor"
+edition     = "2021"
+homepage    = "https://github.com/OffchainLabs/stylus-hello-world"
+keywords    = ["alloy", "arbitrum", "ethereum", "stylus"]
+license     = "MIT OR Apache-2.0"
+name        = "stylus-decompressor"
+version     = "0.1.11"
+
+[dependencies]
+alloy-consensus  = "=0.11.1"
+alloy-primitives = "=0.8.20"
+alloy-rlp        = "=0.3.10"
+alloy-sol-types  = "=0.8.20"
+hex              = { version = "0.4", default-features = false }
+miniz_oxide      = "0.8.9"
+rlp              = "0.6.1"
+stylus-sdk       = "0.9.0"
+
+[dev-dependencies]
+alloy-primitives = { version = "=0.8.20", features = ["sha3-keccak"] }
+dotenv           = "0.15.0"
+ethers           = "2.0"
+eyre             = "0.6.8"
+stylus-sdk       = { version = "0.9.0", features = ["stylus-test"] }
+tokio            = { version = "1.12.0", features = ["full"] }
+
+[features]
+debug      = ["stylus-sdk/debug"]
+default    = ["mini-alloc"]
+export-abi = ["stylus-sdk/export-abi"]
+mini-alloc = ["stylus-sdk/mini-alloc"]
+
+[[bin]]
+name = "stylus-decompressor"
+path = "src/main.rs"
+
+[lib]
+crate-type = ["cdylib", "lib"]
+
+[profile.release]
+codegen-units = 1
+lto           = true
+panic         = "abort"
+strip         = true
+
+# If you need to reduce the binary size, it is advisable to try other
+# optimization levels, such as "s" and "z"
+opt-level = 3

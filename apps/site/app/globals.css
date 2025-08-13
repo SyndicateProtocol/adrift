@@ -1,0 +1,61 @@
+@import "tailwindcss";
+
+:root {
+  --background: #e1e3d5;
+  --foreground: #373737;
+}
+
+html, body {
+  min-height: 100svh;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-mono: var(--font-jetbrains-mono);
+
+  --animate-wave: wave 6s steps(8) infinite;
+  --animate-boat: boat 20s steps(8) infinite;
+
+  @keyframes wave {
+    0%,
+    100% {
+      transform: translateX(0) translateY(0);
+    }
+
+    25% {
+      transform: translateX(-20%) translateY(2px);
+    }
+
+    /* 50% {
+      transform: translateY(0px);
+    } */
+
+    75% {
+      transform: translateX(20%) translateY(-2px);
+    }
+  }
+  @keyframes boat {
+    0%,
+    100% {
+      transform: translateX(0) translateY(0);
+    }
+
+    25% {
+      transform: translateX(-50%) translateY(2px);
+    }
+    /* 
+    50% {
+      transform: translateY(0px);
+    } */
+
+    75% {
+      transform: translateX(50%) translateY(-2px);
+    }
+  }
+}

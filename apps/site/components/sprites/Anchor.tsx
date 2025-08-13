@@ -1,0 +1,18 @@
+export function Anchor(props: React.SVGProps<SVGSVGElement>) {
+  const { className, style } = props
+
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      fill="none"
+      viewBox="0 0 450 700"
+      className={className}
+      style={style}
+    >
+      <path
+        fill="currentColor"
+        d="M250 250h-50v50h50zM250 300h-50v50h50zM250 350h-50v50h50zM250 400h-50v50h50zM250 450h-50v50h50zM250 500h-50v50h50zM200 500h-50v50h50zM150 500h-50v50h50zM100 500H50v50h50zM50 450H0v50h50zM50 500H0v50h50zM100 550H50v50h50zM150 600h-50v50h50zM200 600h-50v50h50zM300 600h-50v50h50zM350 600h-50v50h50zM400 550h-50v50h50zM450 500h-50v50h50zM450 450h-50v50h50zM400 500h-50v50h50zM350 550h-50v50h50zM300 550h-50v50h50zM300 500h-50v50h50zM350 500h-50v50h50zM200 550h-50v50h50zM150 550h-50v50h50zM250 650h-50v50h50zM250 600h-50v50h50zM250 550h-50v50h50zM100 200H50v50h50zM150 200h-50v50h50zM200 200h-50v50h50zM250 200h-50v50h50zM250 150h-50v50h50zM250 100h-50v50h50zM200 50h-50v50h50zM250 0h-50v50h50zM300 50h-50v50h50zM300 200h-50v50h50zM350 200h-50v50h50zM400 200h-50v50h50z"
+      />
+    </svg>
+  )
+}

@@ -1,0 +1,35 @@
+{
+  "name": "adrift-site",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev --turbopack",
+    "build": "next build",
+    "start": "next start",
+    "postinstall": "bun setup-para"
+  },
+  "dependencies": {
+    "@farcaster/miniapp-sdk": "^0.1.2",
+    "@getpara/react-sdk": "2.0.0-alpha.32",
+    "@getpara/viem-v2-integration": "2.0.0-alpha.32",
+    "@tanstack/react-query": "^5.81.5",
+    "clsx": "^2.1.1",
+    "date-fns": "^4.1.0",
+    "motion": "^12.23.0",
+    "next": "^15.3.4",
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0",
+    "tailwind-merge": "^3.3.1",
+    "viem": "^2",
+    "wagmi": "^2.15.6"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "2.0.6",
+    "@tailwindcss/postcss": "^4.1.11",
+    "@types/node": "^24.0.10",
+    "@types/react": "^19.1.8",
+    "@types/react-dom": "^19.1.6",
+    "tailwindcss": "^4.1.11",
+    "typescript": "^5.8.3"
+  }
+}

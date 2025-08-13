@@ -1,0 +1,31 @@
+{
+  "miniapp": {
+    "version": "1",
+    "name": "Adrift",
+    "homeUrl": "https://adrift.syndicate.io",
+    "iconUrl": "https://adrift.syndicate.io/fc/icon.png",
+    "splashImageUrl": "https://adrift.syndicate.io/fc/splash.png",
+    "splashBackgroundColor": "#E1E3D5",
+    "subtitle": "Play at sea",
+    "description": "Stay afloat longer than anyone else by fixing your boat.",
+    "screenshotUrls": ["https://adrift.syndicate.io/fc/screenshot-1.png"],
+    "heroImageUrl": "https://adrift.syndicate.io/fc/hero.png",
+    "tagline": "Play at sea",
+    "requiredCapabilities": [
+      "actions.ready",
+      "actions.addMiniApp",
+      "actions.composeCast",
+      "haptics.impactOccurred",
+      "haptics.selectionChanged"
+    ],
+    "primaryCategory": "games",
+    "tags": ["game", "survival", "appchain", "syndicate"],
+    "canonicalDomain": "adrift.syndicate.io",
+    "webhookUrl": "https://api.neynar.com/f/app/daca595a-297d-42e4-b6eb-d99f9db69316/event"
+  },
+  "accountAssociation": {
+    "header": "eyJmaWQiOjIwOTI5LCJ0eXBlIjoiYXV0aCIsImtleSI6IjB4YTlFZGRiYTM0NjY0YjNDQzg5ZjdBNkRiRDM0Mjk4Zjg3RDk0NkViRiJ9",
+    "payload": "eyJkb21haW4iOiJhZHJpZnQuc3luZGljYXRlLmlvIn0",
+    "signature": "0p2nJiz8wTeYqBB/T6w2adONZD3MRiOi1GL0mQX9kkw22UybDATKK54urUr+d3InKXmEbmV/7AkL9ekcNoknrhw="
+  }
+}
