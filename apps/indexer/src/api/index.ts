@@ -1,12 +1,10 @@
+import { db } from "ponder:api"
+import { checkins, game, gamePlayer } from "ponder:schema"
 import { waitForHash } from "@syndicateio/syndicate-node/utils"
 import { Hono } from "hono"
 import { and, count, desc, eq, lt, replaceBigInts, sum } from "ponder"
-import { db } from "ponder:api"
-import { checkins, game, gamePlayer } from "ponder:schema"
-import { getAddress, stringify, zeroAddress } from "viem"
-
-import { AdriftAbi } from "../../abis/AdriftAbi"
-import { pacifica, pacificaPublicClient } from "../utils/chain"
+import { getAddress, stringify } from "viem"
+import { pacifica } from "../utils/chain"
 import { env } from "../utils/env"
 import { syndicate } from "../utils/syndicate"
 
@@ -246,17 +244,6 @@ app.get("/heartbeat", async (c) => {
     })
   }
 
-  const gameHasWinner =
-    currentGame.winner !== zeroAddress && currentGame.winner !== null
-  if (gameHasWinner) {
-    return c.json({
-      data: {
-        success: true,
-        action: "none, game has winner & is over"
-      }
-    })
-  }
-
   // DQ inactive players
   const now = Math.floor(Date.now() / 1000)
   const inactivePlayers = await db.query.gamePlayer.findMany({
@@ -275,6 +262,34 @@ app.get("/heartbeat", async (c) => {
         .map((player) => player.playerAddress)
         .join(", ")}`
     )
+
+    // Check if the TC project is backed up
+    const { transactionRequests } =
+      await syndicate.wallet.getTransactionRequestsByProject(
+        env.SYNDICATE_TC_PROJECT_ID
+      )
+    // if requests are valid & don't have attempts, they are in the queue
+    const requestsInQueue = transactionRequests.filter(
+      ({ transactionAttempts, invalid }) =>
+        !invalid && (transactionAttempts?.length === 0 || !transactionAttempts)
+    )
+
+    if (requestsInQueue.length > 0) {
+      const transactionIds = requestsInQueue.map((req) => req.transactionId)
+      console.debug(
+        `TC project is backed up, skipping disqualification: ${transactionIds.join(
+          ", "
+        )}`
+      )
+      return c.json({
+        data: {
+          success: false,
+          action: "disqualifyInactivePlayers, TC project is backed up",
+          players: inactivePlayers.map((player) => player.playerAddress),
+          transactionIds
+        }
+      })
+    }
     const txs = await Promise.all(
       inactivePlayers.map(async (player) => {
         return syndicate.transact.sendTransaction({
@@ -299,49 +314,6 @@ app.get("/heartbeat", async (c) => {
         success: true,
         action: "disqualifyInactivePlayers",
         players: inactivePlayers.map((player) => player.playerAddress)
-      }
-    })
-  }
-
-  // Check for winner
-  const activePlayers = await db.query.gamePlayer.findMany({
-    where: and(
-      eq(gamePlayer.gameAddress, currentGame.address),
-      eq(gamePlayer.isDisqualified, false),
-      eq(gamePlayer.isWinner, false)
-    ),
-    limit: 10
-  })
-  if (activePlayers.length === 1 && activePlayers[0]) {
-    const winner = activePlayers[0]
-    const isActive = await pacificaPublicClient.readContract({
-      address: currentGame.address,
-      abi: AdriftAbi,
-      functionName: "isPlayerActive",
-      args: [winner.playerAddress]
-    })
-    if (!isActive) {
-      console.debug(
-        `Player ${winner.playerAddress} is not active, skipping end game`
-      )
-      return c.json({ data: { success: true } })
-    }
-    console.debug(`Ending game with player ${winner.playerAddress}`)
-    const tx = await syndicate.transact.sendTransaction({
-      projectId: env.SYNDICATE_TC_PROJECT_ID,
-      contractAddress: currentGame.address,
-      chainId: pacifica.id,
-      functionSignature: "endGame(address player)",
-      args: {
-        player: winner.playerAddress
-      }
-    })
-    console.debug("Game ending tx ID", tx.transactionId)
-    return c.json({
-      data: {
-        success: true,
-        action: "endGame",
-        players: [winner.playerAddress]
       }
     })
   }
