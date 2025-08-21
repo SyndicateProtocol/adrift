@@ -183,6 +183,9 @@ contract AdriftForever is AccessControl {
     }
 
     function _disqualify(address player, uint256 lastActiveTime) internal {
+        // Prevent double disqualification
+        require(!isPlayerDisqualified[player], "Player is already disqualified");
+
         // We don't need to manually mark a player as inactive, this is
         // automatic based on the check-in timestamp. This just reduces the
         // player count

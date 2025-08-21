@@ -46,7 +46,7 @@ contract DeployRandom is Script {
     }
 }
 
-contract DeployFactoriesAndGame is Script {
+contract DeployFactoriesAndGameForever is Script {
     function run() public {
         uint256 privateKey = vm.envUint("PRIV_KEY");
         address admin = vm.addr(privateKey);
