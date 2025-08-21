@@ -65,7 +65,7 @@ export function Manifest() {
         </div>
 
         <div className="flex justify-between items-center">
-          <span className="text-sm text-foreground">Fees paid</span>
+          <span className="text-sm text-foreground">Gas recycled</span>
           <span className="text-sm font-mono">
             {Number(
               formatUnits(
