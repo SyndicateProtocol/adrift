@@ -114,11 +114,11 @@ adrift/
 
 | Contract Name                 | Address                                                                                                                       |
 | ----------------------------  | ----------------------------------------------------------------------------------------------------------------------------- |
-| AdriftFactory                 | [0x365200fF4be0FaCeb50DeAfcDA4Ae2a836e4A7Eb](https://pacifica.explorer.testnet.syndicate.io/address/0x365200fF4be0FaCeb50DeAfcDA4Ae2a836e4A7Eb) |
-| CheckInOutcomesFactory        | [0x3D3e9119418d6ef567fCAeCCcCF665B7f96aD320](https://pacifica.explorer.testnet.syndicate.io/address/0x3D3e9119418d6ef567fCAeCCcCF665B7f96aD320) |
+| AdriftFactory                 | [0xe4D5693E21EE66a9a9b3f513Ae6822B38424A072](https://pacifica.explorer.testnet.syndicate.io/address/0xe4D5693E21EE66a9a9b3f513Ae6822B38424A072) |
+| CheckInOutcomesFactory        | [0x9fDf06F9CC62829795dADB60a71db44A348308f2](https://pacifica.explorer.testnet.syndicate.io/address/0x9fDf06F9CC62829795dADB60a71db44A348308f2) |
 | Random                        | [0xc75954B9B4Bb4B80883Cf645744612138b7e4870](https://pacifica.explorer.testnet.syndicate.io/address/0xc75954B9B4Bb4B80883Cf645744612138b7e4870) |
-| CheckInOutcomes               | [0x45fAb2d2Ec380015c7D0fB3f6a9E37568c3B622e](https://pacifica.explorer.testnet.syndicate.io/address/0x45fAb2d2Ec380015c7D0fB3f6a9E37568c3B622e) |
-| AdriftForever                 | [0x2234ea7a36635d8E8A58DDbF7941EB782d847C54](https://pacifica.explorer.testnet.syndicate.io/address/0x2234ea7a36635d8E8A58DDbF7941EB782d847C54) |
+| CheckInOutcomes               | [0x70068b12F915545abDC610bE2aCDC4443fb6b0a2](https://pacifica.explorer.testnet.syndicate.io/address/0x70068b12F915545abDC610bE2aCDC4443fb6b0a2) |
+| AdriftForever                 | [0x7AC97BCf8fA1A7618128da7269a9f6C3c10D8a43](https://pacifica.explorer.testnet.syndicate.io/address/0x7AC97BCf8fA1A7618128da7269a9f6C3c10D8a43) |
 
 ### Pacifica (Appchain): Production
 
