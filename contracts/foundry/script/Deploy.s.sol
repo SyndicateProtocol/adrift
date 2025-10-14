@@ -39,8 +39,9 @@ contract DeployFactories is Script {
 contract DeployRandom is Script {
     function run() public {
         uint256 privateKey = vm.envUint("PRIV_KEY");
+        address randomnessAdmin = vm.envAddress("RANDOM_ADMIN");
         vm.startBroadcast(privateKey);
-        Random random = new Random(vm.addr(privateKey));
+        Random random = new Random(randomnessAdmin);
         console.log("Random", address(random));
         vm.stopBroadcast();
     }
@@ -62,7 +63,7 @@ contract DeployFactoriesAndGameForever is Script {
         console.log("CheckInOutcomes", address(checkInOutcomes));
         console.log("AdriftForever", address(adriftForever));
 
-        uint256 gameStartTime = 1755101309;
+        uint256 gameStartTime = 1760472083;
         adriftForever.setGameStartTime(gameStartTime);
         console.log("Game started at", gameStartTime);
         vm.stopBroadcast();

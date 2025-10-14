@@ -51,7 +51,9 @@ export const envSchema = z.object({
   LIT_PRIVATE_KEY: z.string().describe("The private key of the Lit account"),
   LIT_PKP_PUBLIC_KEY: z
     .string()
-    .describe("The public key of the Lit PKP account")
+    .describe("The public key of the Lit PKP account"),
+  RISA_RPC_URL: z.string().describe("The RPC URL of the Risa testnet"),
+  PACIFICA_RPC_URL: z.string().describe("The RPC URL of the Pacifica testnet")
 })
 
 export const env = envSchema.parse(process.env)

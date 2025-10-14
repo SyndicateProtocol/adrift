@@ -11,11 +11,11 @@ export default createConfig({
   chains: {
     pacifica: {
       id: pacifica.id,
-      rpc: pacifica.rpcUrls.default.http[0]
+      rpc: env.PACIFICA_RPC_URL
     },
     risa: {
       id: risa.id,
-      rpc: risa.rpcUrls.default.http[0]
+      rpc: env.RISA_RPC_URL
     }
   },
   contracts: {
