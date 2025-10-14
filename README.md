@@ -114,11 +114,11 @@ adrift/
 
 | Contract Name                 | Address                                                                                                                       |
 | ----------------------------  | ----------------------------------------------------------------------------------------------------------------------------- |
-| AdriftFactory                 | [0xe4D5693E21EE66a9a9b3f513Ae6822B38424A072](https://pacifica.explorer.testnet.syndicate.io/address/0xe4D5693E21EE66a9a9b3f513Ae6822B38424A072) |
-| CheckInOutcomesFactory        | [0x9fDf06F9CC62829795dADB60a71db44A348308f2](https://pacifica.explorer.testnet.syndicate.io/address/0x9fDf06F9CC62829795dADB60a71db44A348308f2) |
-| Random                        | [0xc75954B9B4Bb4B80883Cf645744612138b7e4870](https://pacifica.explorer.testnet.syndicate.io/address/0xc75954B9B4Bb4B80883Cf645744612138b7e4870) |
-| CheckInOutcomes               | [0x70068b12F915545abDC610bE2aCDC4443fb6b0a2](https://pacifica.explorer.testnet.syndicate.io/address/0x70068b12F915545abDC610bE2aCDC4443fb6b0a2) |
-| AdriftForever                 | [0x7AC97BCf8fA1A7618128da7269a9f6C3c10D8a43](https://pacifica.explorer.testnet.syndicate.io/address/0x7AC97BCf8fA1A7618128da7269a9f6C3c10D8a43) |
+| AdriftFactory                 | [0x00aE9e627E3601928cc793De95923346564aC62C](https://pacifica.explorer.testnet.syndicate.io/address/0x00aE9e627E3601928cc793De95923346564aC62C) |
+| CheckInOutcomesFactory        | [0x49436F4956E80D9e27826ec6e43f06b9a4E54C69](https://pacifica.explorer.testnet.syndicate.io/address/0x49436F4956E80D9e27826ec6e43f06b9a4E54C69) |
+| Random                        | [0x6a0f0b429ceb4289d1C0694b1C11542A70148EBE](https://pacifica.explorer.testnet.syndicate.io/address/0x6a0f0b429ceb4289d1C0694b1C11542A70148EBE) |
+| CheckInOutcomes               | [0x3C162e84a57eC98730D6c96d9D268Eb323Ba7338](https://pacifica.explorer.testnet.syndicate.io/address/0x3C162e84a57eC98730D6c96d9D268Eb323Ba7338) |
+| AdriftForever                 | [0xE5d5BDa485239317ebf2788B849f53cE9B63a64B](https://pacifica.explorer.testnet.syndicate.io/address/0xE5d5BDa485239317ebf2788B849f53cE9B63a64B) |
 
 ### Pacifica (Appchain): Production
 

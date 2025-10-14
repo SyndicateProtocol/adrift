@@ -36,10 +36,10 @@ export const risa = {
   },
   rpcUrls: {
     default: {
-      http: ["https://risa-testnet.g.alchemy.com/v2/-0yNwLpWWs-Rcd9p5bbCN"]
+      http: ["https://risa-testnet.g.alchemy.com/public"]
     },
     public: {
-      http: ["https://risa-testnet.g.alchemy.com/v2/-0yNwLpWWs-Rcd9p5bbCN"]
+      http: ["https://risa-testnet.g.alchemy.com/public"]
     }
   },
   blockExplorers: {
