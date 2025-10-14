@@ -69,13 +69,15 @@ export async function getLitBundlerTransaction() {
     jsParams: {
       RANDOM_CONTRACT_ADDRESS: env.RANDOM_CONTRACT_ADDRESS,
       BUNDLER_ADDRESS: env.BUNDLER_ADDRESS,
-      PACIFICA_RPC_URL: pacifica.rpcUrls.default.http[0],
+      PACIFICA_RPC_URL: env.PACIFICA_RPC_URL,
       PACIFICA_CHAIN_ID: pacifica.id,
-      RISA_RPC_URL: risa.rpcUrls.default.http[0],
+      RISA_RPC_URL: env.RISA_RPC_URL,
       RISA_CHAIN_ID: risa.id,
       PKP_PUBLIC_KEY: env.LIT_PKP_PUBLIC_KEY
     }
   })
+  console.log("success", success)
+  console.log("response", response)
   if (!success) {
     throw new Error("Failed to execute LIT action")
   }
