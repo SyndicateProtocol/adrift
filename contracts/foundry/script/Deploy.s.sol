@@ -112,9 +112,8 @@ contract DeployAdriftBundler is Script {
         // addresses to write to the contract. We must allowlist the AdriftBundler so it can process transactions.
         vm.startBroadcast(vm.envUint("ALLOWLIST_SEQUENCING_MODULE_OWNER_PRIVATE_KEY"));
         console.log("Allowlisting AdriftBundler on SyndicateSequencingChain");
-        IAllowlistSequencingModule(vm.envAddress("ALLOWLIST_SEQUENCING_MODULE_ADDRESS")).addToAllowlist(
-            address(adriftBundler)
-        );
+        IAllowlistSequencingModule(vm.envAddress("ALLOWLIST_SEQUENCING_MODULE_ADDRESS"))
+            .addToAllowlist(address(adriftBundler));
         vm.stopBroadcast();
     }
 }
