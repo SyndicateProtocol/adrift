@@ -7,14 +7,12 @@ import {
 import { LIT_ABILITY, LIT_NETWORK, LIT_RPC } from "@lit-protocol/constants"
 import { LitNodeClient } from "@lit-protocol/lit-node-client"
 import * as ethers from "ethers"
+import { LocalStorage } from "node-localstorage"
 //@ts-ignore
 import type { Hex } from "viem"
 import { pacifica, risa } from "../src/utils/chain"
 import { env } from "../src/utils/env"
 import { litActionCode } from "./action"
-import { LocalStorage } from "node-localstorage"
-// @ts-ignore
-import Hash from "ipfs-only-hash"
 
 export async function getLitBundlerTransaction() {
   const client = new LitNodeClient({
@@ -65,8 +63,6 @@ export async function getLitBundlerTransaction() {
       })
     }
   })
-  const codeHash = await Hash.of(litActionCode)
-  console.log("codeHash", codeHash)
   const { success, response } = await client.executeJs({
     sessionSigs,
     code: litActionCode,
@@ -80,8 +76,6 @@ export async function getLitBundlerTransaction() {
       PKP_PUBLIC_KEY: env.LIT_PKP_PUBLIC_KEY
     }
   })
-  console.log("response", JSON.stringify(response))
-  console.log("success", success)
   if (!success) {
     throw new Error("Failed to execute LIT action")
   }
