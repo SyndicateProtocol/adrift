@@ -80,7 +80,7 @@ export async function getLitBundlerTransaction() {
       PKP_PUBLIC_KEY: env.LIT_PKP_PUBLIC_KEY
     }
   })
-  console.log("response", response)
+  console.log("response", JSON.stringify(response))
   console.log("success", success)
   if (!success) {
     throw new Error("Failed to execute LIT action")
