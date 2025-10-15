@@ -98,16 +98,13 @@ contract DeployAdriftBundler is Script {
         address sequencingAddress = vm.envAddress("SEQUENCING_ADDRESS");
         address randomAdmin = vm.envAddress("RANDOM_ADMIN");
         address sequencerAdmin = vm.envAddress("SEQUENCER_ADMIN");
-        address decompressorAddress = vm.envAddress("DECOMPRESSOR_ADDRESS");
 
         vm.startBroadcast(privateKey);
         console.log("Creating AdriftBundler");
         console.log("Sequencing address", sequencingAddress);
         console.log("Randomness admin", randomAdmin);
         console.log("Sequencer admin", sequencerAdmin);
-        console.log("Decompressor address", decompressorAddress);
-        AdriftBundler adriftBundler =
-            new AdriftBundler(sequencingAddress, decompressorAddress, randomAdmin, sequencerAdmin);
+        AdriftBundler adriftBundler = new AdriftBundler(sequencingAddress, randomAdmin, sequencerAdmin);
         console.log("AdriftBundler", address(adriftBundler));
         vm.stopBroadcast();
 
@@ -115,9 +112,8 @@ contract DeployAdriftBundler is Script {
         // addresses to write to the contract. We must allowlist the AdriftBundler so it can process transactions.
         vm.startBroadcast(vm.envUint("ALLOWLIST_SEQUENCING_MODULE_OWNER_PRIVATE_KEY"));
         console.log("Allowlisting AdriftBundler on SyndicateSequencingChain");
-        IAllowlistSequencingModule(vm.envAddress("ALLOWLIST_SEQUENCING_MODULE_ADDRESS")).addToAllowlist(
-            address(adriftBundler)
-        );
+        IAllowlistSequencingModule(vm.envAddress("ALLOWLIST_SEQUENCING_MODULE_ADDRESS"))
+            .addToAllowlist(address(adriftBundler));
         vm.stopBroadcast();
     }
 }

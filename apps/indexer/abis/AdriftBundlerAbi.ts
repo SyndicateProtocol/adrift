@@ -8,11 +8,6 @@ export const AdriftBundlerAbi = [
         internalType: "address"
       },
       {
-        name: "decompressorAddress_",
-        type: "address",
-        internalType: "address"
-      },
-      {
         name: "randomnessRole_",
         type: "address",
         internalType: "address"
@@ -76,19 +71,6 @@ export const AdriftBundlerAbi = [
     ],
     outputs: [],
     stateMutability: "nonpayable"
-  },
-  {
-    type: "function",
-    name: "decompressor",
-    inputs: [],
-    outputs: [
-      {
-        name: "",
-        type: "address",
-        internalType: "contract IDecompressor"
-      }
-    ],
-    stateMutability: "view"
   },
   {
     type: "function",
@@ -185,20 +167,31 @@ export const AdriftBundlerAbi = [
   },
   {
     type: "function",
-    name: "processTransaction",
+    name: "playerContractCheckinNonces",
     inputs: [
       {
-        name: "txn",
-        type: "bytes",
-        internalType: "bytes"
+        name: "contractAddress",
+        type: "address",
+        internalType: "address"
+      },
+      {
+        name: "playerAddress",
+        type: "address",
+        internalType: "address"
       }
     ],
-    outputs: [],
-    stateMutability: "nonpayable"
+    outputs: [
+      {
+        name: "checkinNonce",
+        type: "uint256",
+        internalType: "uint256"
+      }
+    ],
+    stateMutability: "view"
   },
   {
     type: "function",
-    name: "processTransactionUncompressed",
+    name: "processTransaction",
     inputs: [
       {
         name: "txn",
