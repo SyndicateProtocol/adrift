@@ -7,8 +7,6 @@ import {
 import { LIT_ABILITY, LIT_NETWORK, LIT_RPC } from "@lit-protocol/constants"
 import { LitNodeClient } from "@lit-protocol/lit-node-client"
 import * as ethers from "ethers"
-// @ts-ignore
-import Hash from "ipfs-only-hash"
 import { LocalStorage } from "node-localstorage"
 //@ts-ignore
 import type { Hex } from "viem"
@@ -65,7 +63,6 @@ export async function getLitBundlerTransaction() {
       })
     }
   })
-  const codeHash = await Hash.of(litActionCode)
   const { success, response } = await client.executeJs({
     sessionSigs,
     code: litActionCode,
