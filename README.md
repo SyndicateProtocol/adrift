@@ -135,7 +135,7 @@ adrift/
 ### Risa (Sequencing Chain)
 | Contract Name                 | Address                                                                                                                       |
 | ----------------------------  | ----------------------------------------------------------------------------------------------------------------------------- |
-| AdriftBundler                 | [0x5e384926c2146004e45E474909a11136f5cAb561](https://risa-testnet.explorer.alchemy.com/address/0x5e384926c2146004e45E474909a11136f5cAb561) |
+| AdriftBundler                 | [0xC9d942f8706A94B0A0c0bDC0b6e09E1D66bb18E8](https://risa-testnet.explorer.alchemy.com/address/0xC9d942f8706A94B0A0c0bDC0b6e09E1D66bb18E8) |
 | Decompressor                  | [0x5d3f5fc4129290b11ac6ed9bbc99cf11a79a5ef0](https://risa-testnet.explorer.alchemy.com/address/0x5d3f5fc4129290b11ac6ed9bbc99cf11a79a5ef0) |
 
 ## License
