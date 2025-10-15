@@ -47,7 +47,6 @@ export async function createPkp() {
   const pkpPubkeyInfo = await litContracts.pubkeyRouterContract.read.pubkeys(
     ethers.BigNumber.from(pkpId)
   )
-  // console.log("PKP Info:", pkpPubkeyInfo);
   const pkpPublicKey = pkpPubkeyInfo.pubkey
   const pkpEthAddress = ethers.utils.computeAddress(pkpPublicKey)
   const pkpInfo = {
@@ -61,7 +60,6 @@ export async function createPkp() {
 createPkp()
   .then(() => {
     process.exit(0)
-    console.log("done")
   })
   .catch((err) => {
     console.error(err)

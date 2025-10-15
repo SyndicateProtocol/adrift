@@ -251,7 +251,7 @@ ponder.on("AdriftBundler:MempoolUpdated", async () => {
         serializedTransaction: bundlerTransaction
       })
 
-      console.debug("Lit randomness tx sent to bundler", txHash)
+      console.debug("Randomness tx sent to AdriftBundler on Risa", txHash)
     } catch (e) {
       console.error("Error sending bundler tx via Lit", e)
     }
