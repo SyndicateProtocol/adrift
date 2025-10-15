@@ -98,16 +98,13 @@ contract DeployAdriftBundler is Script {
         address sequencingAddress = vm.envAddress("SEQUENCING_ADDRESS");
         address randomAdmin = vm.envAddress("RANDOM_ADMIN");
         address sequencerAdmin = vm.envAddress("SEQUENCER_ADMIN");
-        address decompressorAddress = vm.envAddress("DECOMPRESSOR_ADDRESS");
 
         vm.startBroadcast(privateKey);
         console.log("Creating AdriftBundler");
         console.log("Sequencing address", sequencingAddress);
         console.log("Randomness admin", randomAdmin);
         console.log("Sequencer admin", sequencerAdmin);
-        console.log("Decompressor address", decompressorAddress);
-        AdriftBundler adriftBundler =
-            new AdriftBundler(sequencingAddress, decompressorAddress, randomAdmin, sequencerAdmin);
+        AdriftBundler adriftBundler = new AdriftBundler(sequencingAddress, randomAdmin, sequencerAdmin);
         console.log("AdriftBundler", address(adriftBundler));
         vm.stopBroadcast();
 
